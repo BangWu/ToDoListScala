@@ -5,13 +5,16 @@ version := "1.0-SNAPSHOT"
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
 scalaVersion := "2.11.6"
-
 libraryDependencies ++= Seq(
   jdbc,
   cache,
   ws,
   specs2 % Test
 )
+libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.18"
+libraryDependencies += "org.sorm-framework" % "sorm" % "0.3.18"
+libraryDependencies += "org.webjars" % "jquery" % "2.1.4"
+
 
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
 
